@@ -4,9 +4,13 @@ First, generate the static html output:
 
 ```bash
 npm run build
+```
 # or
+```bash
 yarn build
+```
 # or
+```bash
 pnpm build
 ```
 Once complete, we should see an /out directory. It contains the bundled version of our Next.js application as well as our manifest.json. Think of this directory as the source code of our extension.
@@ -15,11 +19,13 @@ Before importing our extension into the browser, we must address one issue. Dire
 
 This conflicts with a bundled Next.js application since its root directory is \_next. To resolve this issue, we can run the following command to replace all instances of ‘_next’ with ‘next’:
 
-```bash
 # Windows/Linux (For Windows use WSL)
+```bash
 mv ./out/_next ./out/next && cd ./out && grep -rl '/_next' * | xargs sed -i 's|/_next|/next|g'
+```
 
 # MacOS
+```bash
 mv ./out/_next ./out/next && cd ./out && grep -rli '_next' * | xargs -I@ sed -i '' 's|/_next|/next|g' @;
 ```
 
