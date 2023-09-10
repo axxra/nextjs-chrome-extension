@@ -7,11 +7,11 @@ First, generate the static html output:
 ```bash
 npm run build
 ```
-# or
+or
 ```bash
 yarn build
 ```
-# or
+or
 ```bash
 pnpm build
 ```
@@ -21,12 +21,12 @@ Before importing our extension into the browser, we must address one issue. Dire
 
 This conflicts with a bundled Next.js application since its root directory is \_next. To resolve this issue, we can run the following command to replace all instances of ‘_next’ with ‘next’:
 
-# Windows/Linux (For Windows use WSL)
+Windows/Linux (For Windows use WSL)
 ```bash
 mv ./out/_next ./out/next && cd ./out && grep -rl '/_next' * | xargs sed -i 's|/_next|/next|g'
 ```
 
-# MacOS
+MacOS
 ```bash
 mv ./out/_next ./out/next && cd ./out && grep -rli '_next' * | xargs -I@ sed -i '' 's|/_next|/next|g' @;
 ```
