@@ -1,5 +1,7 @@
 ## Getting Started
 
+Next.Js + Material Joy UI
+
 First, generate the static html output:
 
 ```bash
